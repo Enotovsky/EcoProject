@@ -27,8 +27,8 @@ export default function App() {
       <main>
         {/* Hero & HowItWorks Section with Background and Textures */}
         <div className="relative w-full overflow-hidden">
-          {/* Background Image & Grid (Behind Content) */}
-          <div className="absolute inset-0 z-0">
+          {/* Background Image & Textures (Behind Content) */}
+          <div className="absolute inset-0 z-0 overflow-hidden">
             <ImageWithFallback 
               src="/scrapbook/hero_how_bg.png" 
               alt="Hills and Grass Background"
@@ -36,9 +36,17 @@ export default function App() {
             />
             {/* Grid Texture on background only, static with document */}
             <div 
-              className="absolute inset-0 mix-blend-multiply opacity-[0.03]" 
+              className="absolute inset-0 mix-blend-multiply opacity-[0.01]" 
               style={{ backgroundImage: 'url(/scrapbook/texture_1.png)', backgroundSize: 'cover' }}
             ></div>
+            
+            {/* Papercut & Grunge Overlays (On background only) */}
+            <div className="absolute inset-0 pointer-events-none mix-blend-color-burn opacity-30">
+              <ImageWithFallback src="/scrapbook/texture_2.png" alt="" className="w-full h-full object-cover max-w-none scale-[1.05] origin-center" />
+            </div>
+            <div className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-50">
+              <ImageWithFallback src="/scrapbook/texture_3.png" alt="" className="w-full h-full object-cover max-w-none scale-[1.05] origin-center" />
+            </div>
           </div>
           
           {/* Content */}
@@ -49,14 +57,6 @@ export default function App() {
             <section id="how">
               <HowItWorks />
             </section>
-          </div>
-
-          {/* Papercut & Grunge Overlays (Over Content, Static with document) */}
-          <div className="absolute inset-0 z-20 pointer-events-none mix-blend-color-burn opacity-30 overflow-hidden">
-            <ImageWithFallback src="/scrapbook/texture_2.png" alt="" className="w-full h-full object-cover max-w-none scale-[1.05] origin-center" />
-          </div>
-          <div className="absolute inset-0 z-20 pointer-events-none mix-blend-overlay opacity-50 overflow-hidden">
-            <ImageWithFallback src="/scrapbook/texture_3.png" alt="" className="w-full h-full object-cover max-w-none scale-[1.05] origin-center" />
           </div>
         </div>
         <section id="features">
