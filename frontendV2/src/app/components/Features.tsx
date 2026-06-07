@@ -97,7 +97,7 @@ export function Features() {
                   className="w-full h-full object-cover object-center"
                 />
               </div>
-              <h4 className="font-pixel font-bold text-center text-sm md:text-base leading-snug px-2 text-black">
+              <h4 className="font-sans font-bold text-center text-sm md:text-base leading-snug px-2 text-black uppercase tracking-wide">
                 {feature.title}
               </h4>
             </motion.div>

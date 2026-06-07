@@ -79,9 +79,10 @@
 }
 
 @theme inline {
-  --font-pixel: 'Press Start 2P', monospace;
-  --font-handwriting: 'Caveat', cursive;
-  --font-sans: 'Inter', sans-serif;
+  --font-pixel: 'QuinqueFive', 'Press Start 2P', monospace;
+  --font-handwriting: 'Dotective', 'Caveat', cursive;
+  --font-sans: 'Fira Sans Extra Condensed', 'Inter', sans-serif;
+  --font-mono: 'Feature Mono', 'Fira Mono', monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -129,6 +130,7 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-mono);
   }
 
   /**

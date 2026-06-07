@@ -17,7 +17,7 @@ export function Hero() {
           />
         </div>
         {/* Simple Navigation Links like in mockup */}
-        <nav className="hidden md:flex gap-8 font-pixel text-black text-sm uppercase">
+        <nav className="hidden md:flex gap-8 font-mono text-black text-sm uppercase font-bold">
           <a href="#" className="hover:underline decoration-wavy underline-offset-4">Главный экран</a>
           <a href="#how" className="hover:underline decoration-wavy underline-offset-4">Как это работает?</a>
           <a href="#features" className="hover:underline decoration-wavy underline-offset-4">Возможности</a>
