@@ -79,6 +79,9 @@
 }
 
 @theme inline {
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-handwriting: 'Caveat', cursive;
+  --font-sans: 'Inter', sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

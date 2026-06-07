@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown } from 'lucide-react';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 
 const FAQS = [
   {
@@ -12,8 +12,12 @@ const FAQS = [
     a: 'Нет. Достаточно сфотографировать чек — сервис считает QR-код и автоматически получит список товаров из базы ФНС.'
   },
   {
-    q: 'Что если QR-код не читается?',
-    a: 'Убедитесь, что QR-код на чеке чётко виден, находится в фокусе и не обрезан. Попробуйте сфотографировать чек ещё раз при хорошем освещении.'
+    q: 'Что если чек распознан неправильно?',
+    a: 'Убедитесь, что QR-код на чеке чётко виден, находится в фокусе и не обрезан. Попробуйте загрузить фото ещё раз при хорошем освещении.'
+  },
+  {
+    q: 'Можно ли использовать это как студенческий проект?',
+    a: 'Да! Это открытый проект для повышения экологической осведомленности. Мы будем рады вашему вкладу!'
   }
 ];
 
@@ -21,9 +25,9 @@ export function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <div className="relative py-24 w-full bg-[#F5F5DC]"
+    <div id="faq" className="relative py-24 w-full bg-[#fcfbe8] overflow-hidden"
          style={{
-           backgroundImage: 'linear-gradient(#ccc 1px, transparent 1px), linear-gradient(90deg, #ccc 1px, transparent 1px)',
+           backgroundImage: 'linear-gradient(#e0dfce 1px, transparent 1px), linear-gradient(90deg, #e0dfce 1px, transparent 1px)',
            backgroundSize: '40px 40px'
          }}>
       
@@ -31,46 +35,61 @@ export function FAQ() {
         
         {/* Title */}
         <div className="flex flex-col items-center justify-center mb-16 relative">
-          <div className="absolute right-0 top-0 text-7xl select-none opacity-80 pointer-events-none drop-shadow-md">
-            🤔
-          </div>
+          
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-wrap justify-center items-center gap-x-2 gap-y-4 text-center"
+            className="flex flex-col items-center gap-4 text-center"
           >
-            <span className="font-['Dotective',monospace] text-4xl md:text-5xl rotate-[-2deg]">
-              ЧАСТО
-            </span>
-            <div className="w-full h-1"></div>
-            <span className="font-['Dotective',monospace] text-4xl md:text-5xl rotate-[1deg] mr-4">
-              ЗАДАВАЕМЫЕ
-            </span>
-            <span className="bg-white border-2 border-black px-4 py-2 font-['Feature_Mono',sans-serif] font-bold text-5xl md:text-7xl shadow-[4px_4px_0_#000] rotate-[-1deg]">
-              ВОПРОСЫ
-            </span>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+              <span className="font-handwriting text-5xl md:text-7xl -rotate-2">
+                ЧАСТО
+              </span>
+              <span className="font-handwriting text-5xl md:text-7xl rotate-1">
+                ЗАДАВАЕМЫЕ
+              </span>
+            </div>
+            
+            <div className="flex justify-center items-end gap-2 md:gap-4 relative mt-2">
+              <div className="relative rotate-[-2deg] hover:rotate-1 transition-transform">
+                <ImageWithFallback 
+                  src="/scrapbook/questions_cutout.png" 
+                  alt="ВОПРОСЫ"
+                  className="w-64 md:w-96 drop-shadow-[4px_4px_8px_rgba(0,0,0,0.3)]"
+                />
+              </div>
+              
+              <div className="w-16 md:w-24 mb-4 md:mb-8 absolute -right-16 md:-right-24 bottom-0">
+                <ImageWithFallback 
+                  src="/scrapbook/smirk_emoji.png" 
+                  alt="Smirk"
+                  className="w-full drop-shadow-[2px_2px_4px_rgba(0,0,0,0.4)]"
+                />
+              </div>
+            </div>
           </motion.div>
         </div>
 
         {/* Accordion */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 max-w-3xl mx-auto">
           {FAQS.map((faq, idx) => {
             const isOpen = openIdx === idx;
             return (
               <div key={idx} className="relative">
                 <button
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
-                  className={`w-full flex items-center justify-between p-6 rounded-xl border-2 border-black transition-colors duration-250 ${isOpen ? 'bg-black text-white' : 'bg-[#D8FF00] text-black hover:bg-black hover:text-white'}`}
+                  className={`w-full flex items-center justify-between px-6 py-4 rounded-xl border border-gray-400 transition-colors duration-250 shadow-sm ${isOpen ? 'bg-[#cbe622]' : 'bg-[#D8FF00] hover:bg-[#cbe622]'}`}
                 >
-                  <span className="font-['Feature_Mono',sans-serif] font-bold text-lg md:text-xl text-left pr-4">
+                  <span className="font-sans font-bold text-sm md:text-base text-left pr-4 text-black">
                     {faq.q}
                   </span>
                   <motion.div
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
+                    className="text-black font-pixel text-xs"
                   >
-                    <ChevronDown className={isOpen ? 'text-white' : ''} />
+                    ↓
                   </motion.div>
                 </button>
                 
@@ -83,8 +102,8 @@ export function FAQ() {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="p-6 mt-2 bg-white border-2 border-black rounded-xl shadow-[4px_4px_0_#000]">
-                        <p className="font-['Segoe_UI',sans-serif] text-black leading-relaxed">
+                      <div className="px-6 py-5 mt-2 bg-white/80 backdrop-blur-sm border border-gray-300 rounded-xl shadow-sm">
+                        <p className="font-sans text-sm text-gray-700 leading-relaxed">
                           {faq.a}
                         </p>
                       </div>

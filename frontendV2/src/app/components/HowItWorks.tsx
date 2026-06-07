@@ -1,90 +1,81 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 
 const STICKERS = [
-  {
-    num: '01',
-    title: 'Загрузите чек',
-    desc: 'Пользователь добавляет фото или скан магазинного чека.',
-    color: 'bg-[#FFED63]',
-    rotate: 'rotate-[-3deg]',
-    y: 'translate-y-0',
-    pinColor: 'bg-red-500'
-  },
-  {
-    num: '02',
-    title: 'QR-код → данные ФНС',
-    desc: 'Сервис считывает QR-код чека и получает точный список товаров из базы ФНС.',
-    color: 'bg-[#FFED63]',
-    rotate: 'rotate-[4deg]',
-    y: 'translate-y-8',
-    pinColor: 'bg-blue-500'
-  },
-  {
-    num: '03',
-    title: 'ИИ классифицирует продукты',
-    desc: 'Алгоритм определяет категории товаров и их экологическое влияние.',
-    color: 'bg-[#FF9CF5]',
-    rotate: 'rotate-[-2deg]',
-    y: 'translate-y-16',
-    pinColor: 'bg-yellow-400'
-  },
-  {
-    num: '04',
-    title: 'EcoScan показывает результат',
-    desc: 'Пользователь видит углеродный след, эко-балл и советы.',
-    color: 'bg-[#FF9CF5]',
-    rotate: 'rotate-[3deg]',
-    y: 'translate-y-4',
-    pinColor: 'bg-green-500'
-  }
+  { id: 1, src: '/scrapbook/note_1.png', alt: '01 Загрузите чек', delay: 0.1, y: 'translate-y-4 md:translate-y-8', rotate: '-rotate-3', w: 'w-64 md:w-80' },
+  { id: 2, src: '/scrapbook/note_2.png', alt: '02 OCR распознаёт текст', delay: 0.2, y: 'translate-y-0', rotate: 'rotate-2', w: 'w-64 md:w-80' },
+  { id: 3, src: '/scrapbook/note_3.png', alt: '03 ИИ классифицирует продукты', delay: 0.3, y: 'translate-y-8 md:translate-y-16', rotate: '-rotate-2', w: 'w-64 md:w-80' },
+  { id: 4, src: '/scrapbook/note_4.png', alt: '04 EcoScan показывает результат', delay: 0.4, y: 'translate-y-4', rotate: 'rotate-3', w: 'w-64 md:w-80' }
 ];
 
 export function HowItWorks() {
   return (
-    <div className="relative py-24 w-full bg-[#D8FF00] overflow-hidden border-t-4 border-black border-dashed">
-      {/* Background Texture Overlay */}
-      <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1603484477859-abe6a73f9366?auto=format&fit=crop&q=80')] mix-blend-multiply pointer-events-none"></div>
+    <div id="how" className="relative py-24 w-full overflow-hidden">
+      {/* Background Texture */}
+      <div className="absolute inset-0 z-0">
+        <ImageWithFallback 
+          src="/scrapbook/grass_texture.png" 
+          alt="Grass Background"
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
       
-      <div className="max-w-6xl mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-4 pb-12 mt-12">
-          {STICKERS.map((sticker, idx) => (
-            <motion.div 
-              key={sticker.num}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ delay: idx * 0.1, type: "spring" }}
-              whileHover={{ scale: 1.05, rotate: 0 }}
-              className={`relative p-6 shadow-[8px_8px_0_rgba(0,0,0,0.15)] md:${sticker.y} ${sticker.rotate} ${sticker.color} aspect-square flex flex-col`}
-            >
-              {/* Pin */}
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full border-2 border-black shadow-sm z-20 flex items-center justify-center bg-gray-200">
-                <div className={`w-4 h-4 rounded-full ${sticker.pinColor} border border-black`}></div>
-              </div>
-              
-              {/* Tape piece (optional) */}
-              {idx % 2 === 0 && (
-                <div className="absolute -top-2 -right-4 w-12 h-6 bg-white/40 backdrop-blur-sm border border-white/60 rotate-45 z-10"></div>
-              )}
+      <div className="max-w-7xl mx-auto px-4 relative z-10 flex flex-col items-center">
+        
+        {/* Title */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mb-16"
+        >
+          <span className="font-pixel text-4xl md:text-6xl lg:text-7xl text-white drop-shadow-[2px_2px_0_#000]">
+            КАК
+          </span>
+          <span className="font-pixel text-4xl md:text-6xl lg:text-7xl text-black drop-shadow-[2px_2px_0_#fff] border-4 border-dashed border-white p-2 md:p-4 rotate-2">
+            ЭТО
+          </span>
+          <span className="font-pixel text-4xl md:text-6xl lg:text-7xl text-white drop-shadow-[2px_2px_0_#000]">
+            РАБОТАЕТ?
+          </span>
+        </motion.div>
 
-              <div className="font-['Feature_Mono',sans-serif] font-bold text-3xl mb-2 text-black text-center mt-2">
-                {sticker.num}
-              </div>
-              <h3 className="font-['Feature_Mono',sans-serif] font-bold text-xl mb-3 text-black text-center leading-tight">
-                {sticker.title}
-              </h3>
-              <p className="font-['Segoe_UI',sans-serif] text-sm text-black/80 text-center mt-2">
-                {sticker.desc}
-              </p>
+        {/* Stickers Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-4 relative w-full items-start justify-items-center">
+          
+          {/* Decorative Paperclip */}
+          <motion.div
+            initial={{ opacity: 0, rotate: -45 }}
+            whileInView={{ opacity: 1, rotate: -15 }}
+            viewport={{ once: true }}
+            className="absolute -top-12 right-12 md:right-32 lg:-right-8 w-16 md:w-24 z-20"
+          >
+            <ImageWithFallback 
+              src="/scrapbook/paperclip.png" 
+              alt="Paperclip"
+              className="w-full drop-shadow-xl"
+            />
+          </motion.div>
+
+          {STICKERS.map((sticker) => (
+            <motion.div 
+              key={sticker.id}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: sticker.delay, type: "spring", bounce: 0.4 }}
+              whileHover={{ scale: 1.05, zIndex: 30 }}
+              className={`relative ${sticker.w} ${sticker.y} ${sticker.rotate} cursor-pointer transition-transform duration-300 ease-out z-10`}
+            >
+              <ImageWithFallback 
+                src={sticker.src}
+                alt={sticker.alt}
+                className="w-full h-auto drop-shadow-[8px_8px_16px_rgba(0,0,0,0.3)] hover:drop-shadow-[12px_12px_24px_rgba(0,0,0,0.4)] transition-all"
+              />
             </motion.div>
           ))}
         </div>
-
-        {/* Decorative elements */}
-        <div className="absolute right-0 md:-right-6 top-20 text-6xl rotate-12 drop-shadow-md select-none pointer-events-none">📎</div>
-        <div className="absolute left-10 bottom-10 text-4xl -rotate-12 drop-shadow-md select-none pointer-events-none">🍏</div>
-        <div className="absolute right-1/4 bottom-0 w-8 h-8 rounded-full bg-red-500 border-2 border-black shadow-sm select-none pointer-events-none"></div>
       </div>
     </div>
   );
