@@ -22,30 +22,26 @@ export default function App() {
       `}</style>
       <CustomCursor />
       
-      {/* Global Textures Overlay (Papercut & Grunge) over everything */}
-      <div className="fixed inset-0 z-50 pointer-events-none mix-blend-color-burn opacity-30 overflow-hidden">
-        <ImageWithFallback src="/scrapbook/texture_2.png" alt="" className="w-full h-full object-cover max-w-none scale-[1.15] origin-center" />
-      </div>
-      <div className="fixed inset-0 z-50 pointer-events-none mix-blend-overlay opacity-50 overflow-hidden">
-        <ImageWithFallback src="/scrapbook/texture_3.png" alt="" className="w-full h-full object-cover max-w-none scale-[1.15] origin-center" />
-      </div>
-
       <div className="min-h-screen bg-[#F8FFE4] font-mono text-black overflow-x-hidden relative">
       <Navigation />
       <main>
+        {/* Hero & HowItWorks Section with Background and Textures */}
         <div className="relative w-full overflow-hidden">
+          {/* Background Image & Grid (Behind Content) */}
           <div className="absolute inset-0 z-0">
             <ImageWithFallback 
               src="/scrapbook/hero_how_bg.png" 
               alt="Hills and Grass Background"
               className="w-full h-full object-cover object-top"
             />
-            {/* Grid Texture glued to the background, static via CSS, and barely visible */}
+            {/* Grid Texture on background only, static with document */}
             <div 
-              className="absolute inset-0 mix-blend-multiply opacity-10" 
-              style={{ backgroundImage: 'url(/scrapbook/texture_1.png)', backgroundAttachment: 'fixed', backgroundSize: 'cover' }}
+              className="absolute inset-0 mix-blend-multiply opacity-[0.03]" 
+              style={{ backgroundImage: 'url(/scrapbook/texture_1.png)', backgroundSize: 'cover' }}
             ></div>
           </div>
+          
+          {/* Content */}
           <div className="relative z-10">
             <section id="hero">
               <Hero />
@@ -53,6 +49,14 @@ export default function App() {
             <section id="how">
               <HowItWorks />
             </section>
+          </div>
+
+          {/* Papercut & Grunge Overlays (Over Content, Static with document) */}
+          <div className="absolute inset-0 z-20 pointer-events-none mix-blend-color-burn opacity-30 overflow-hidden">
+            <ImageWithFallback src="/scrapbook/texture_2.png" alt="" className="w-full h-full object-cover max-w-none scale-[1.05] origin-center" />
+          </div>
+          <div className="absolute inset-0 z-20 pointer-events-none mix-blend-overlay opacity-50 overflow-hidden">
+            <ImageWithFallback src="/scrapbook/texture_3.png" alt="" className="w-full h-full object-cover max-w-none scale-[1.05] origin-center" />
           </div>
         </div>
         <section id="features">

@@ -105,20 +105,27 @@ export function TryEcoScan() {
 
   return (
     <div id="try" className="relative py-24 w-full overflow-hidden min-h-[80vh] flex flex-col items-center justify-center">
-      {/* Background */}
+      {/* Background Image & Grid (Behind Content) */}
       <div className="absolute inset-0 z-0">
         <ImageWithFallback 
           src="/scrapbook/hero_how_bg.png" 
           alt="Grass Background"
           className="w-full h-full object-cover object-bottom opacity-95"
         />
-        {/* Some overlay to make it less bright if needed */}
         <div className="absolute inset-0 bg-[#a2d149]/20 mix-blend-multiply"></div>
-        {/* Grid Texture glued to the background, static via CSS */}
+        {/* Grid Texture glued to the background, static with document */}
         <div 
-          className="absolute inset-0 mix-blend-multiply opacity-10" 
-          style={{ backgroundImage: 'url(/scrapbook/texture_1.png)', backgroundAttachment: 'fixed', backgroundSize: 'cover' }}
+          className="absolute inset-0 mix-blend-multiply opacity-[0.03]" 
+          style={{ backgroundImage: 'url(/scrapbook/texture_1.png)', backgroundSize: 'cover' }}
         ></div>
+      </div>
+
+      {/* Papercut & Grunge Overlays (Over Content, Static with document) */}
+      <div className="absolute inset-0 z-20 pointer-events-none mix-blend-color-burn opacity-30 overflow-hidden">
+        <ImageWithFallback src="/scrapbook/texture_2.png" alt="" className="w-full h-full object-cover max-w-none scale-[1.05] origin-center" />
+      </div>
+      <div className="absolute inset-0 z-20 pointer-events-none mix-blend-overlay opacity-50 overflow-hidden">
+        <ImageWithFallback src="/scrapbook/texture_3.png" alt="" className="w-full h-full object-cover max-w-none scale-[1.05] origin-center" />
       </div>
 
       <div className="relative z-10 w-full max-w-[95%] xl:max-w-7xl mx-auto px-4 flex flex-col items-center">
