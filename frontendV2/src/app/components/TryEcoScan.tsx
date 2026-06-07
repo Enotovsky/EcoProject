@@ -105,7 +105,7 @@ export function TryEcoScan() {
 
   return (
     <div id="try" className="relative py-24 w-full overflow-hidden min-h-[80vh] flex flex-col items-center justify-center">
-      {/* Background Image & Textures (Behind Content) */}
+      {/* Background Image & Grid (Behind Content) */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <ImageWithFallback 
           src="/scrapbook/hero_how_bg.png" 
@@ -113,18 +113,18 @@ export function TryEcoScan() {
           className="w-full h-full object-cover object-bottom opacity-95"
         />
         <div className="absolute inset-0 bg-[#a2d149]/20 mix-blend-multiply"></div>
-        {/* Grid Texture glued to the background, static with document */}
-        <div className="absolute inset-0 mix-blend-multiply opacity-[0.005] overflow-hidden">
-          <ImageWithFallback src="/scrapbook/texture_1.png" alt="" className="w-full h-full object-cover max-w-none scale-[1.1] origin-center" />
+        {/* Grid Texture on background only, static with document */}
+        <div className="absolute -inset-[10%] mix-blend-multiply opacity-5 overflow-hidden">
+          <ImageWithFallback src="/scrapbook/texture_1.png" alt="" className="w-full h-full object-cover max-w-none" />
         </div>
-        
-        {/* Papercut & Grunge Overlays (On background only) */}
-        <div className="absolute inset-0 pointer-events-none mix-blend-color-burn opacity-30">
-          <ImageWithFallback src="/scrapbook/texture_2.png" alt="" className="w-full h-full object-cover max-w-none scale-[1.05] origin-center" />
-        </div>
-        <div className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-50">
-          <ImageWithFallback src="/scrapbook/texture_3.png" alt="" className="w-full h-full object-cover max-w-none scale-[1.05] origin-center" />
-        </div>
+      </div>
+
+      {/* Papercut & Grunge Overlays (Over Content completely) */}
+      <div className="absolute -inset-[10%] z-20 pointer-events-none mix-blend-color-burn opacity-30">
+        <ImageWithFallback src="/scrapbook/texture_2.png" alt="" className="w-full h-full object-cover max-w-none" />
+      </div>
+      <div className="absolute -inset-[10%] z-20 pointer-events-none mix-blend-overlay opacity-50">
+        <ImageWithFallback src="/scrapbook/texture_3.png" alt="" className="w-full h-full object-cover max-w-none" />
       </div>
 
       <div className="relative z-10 w-full max-w-[95%] xl:max-w-7xl mx-auto px-4 flex flex-col items-center">
