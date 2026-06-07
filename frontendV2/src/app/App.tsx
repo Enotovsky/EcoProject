@@ -49,7 +49,7 @@ export default function App() {
             {/* Papercut Overlay (On background only) */}
             <div 
               className="absolute -inset-[10%] pointer-events-none mix-blend-overlay"
-              style={{ opacity: 0.005 }}
+              style={{ opacity: 0.02 }}
             >
               <ImageWithFallback src="/scrapbook/texture_3.png" alt="" className="w-full h-full object-cover max-w-none" />
             </div>
