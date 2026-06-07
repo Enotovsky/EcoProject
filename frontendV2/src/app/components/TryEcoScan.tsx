@@ -110,7 +110,7 @@ export function TryEcoScan() {
         <ImageWithFallback 
           src="/scrapbook/hero_how_bg.png" 
           alt="Grass Background"
-          className="w-full h-full object-cover object-bottom opacity-95"
+          className="w-full h-full object-cover object-bottom opacity-95 saturate-150 contrast-110"
         />
         <div className="absolute inset-0 bg-[#a2d149]/20 mix-blend-multiply"></div>
         {/* Grid Texture on background only, static with document */}

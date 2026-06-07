@@ -32,7 +32,7 @@ export default function App() {
             <ImageWithFallback 
               src="/scrapbook/hero_how_bg.png" 
               alt="Hills and Grass Background"
-              className="w-full h-full object-cover object-top"
+              className="w-full h-full object-cover object-top saturate-150 contrast-110"
             />
             {/* Grid Texture on background only, static with document */}
             <div 
