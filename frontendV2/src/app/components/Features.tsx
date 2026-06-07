@@ -37,11 +37,15 @@ const FEATURES = [
 
 export function Features() {
   return (
-    <div id="features" className="relative py-24 w-full bg-[#E8E6D3] overflow-hidden" 
-         style={{
-           backgroundImage: 'linear-gradient(#d1cfc0 1px, transparent 1px), linear-gradient(90deg, #d1cfc0 1px, transparent 1px)',
-           backgroundSize: '40px 40px'
-         }}>
+    <div id="features" className="relative py-24 w-full bg-[#fcfbe8] overflow-hidden">
+      {/* Background Yellow Grid */}
+      <div className="absolute inset-0 z-0 opacity-50 mix-blend-multiply" 
+           style={{
+             backgroundImage: 'url(/scrapbook/yellow_grid.png)',
+             backgroundSize: '400px auto',
+             backgroundRepeat: 'repeat'
+           }} 
+      />
          
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         
