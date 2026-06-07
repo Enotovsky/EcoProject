@@ -1,0 +1,39 @@
+# Виртуальное окружение Python
+.venv/
+venv/
+ENV/
+env/
+
+# Секретные данные и конфигурация
+.env
+
+# Кэш Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Настройки IDE (PyCharm / VS Code)
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Зависимости и сборка фронтенда
+frontend/node_modules/
+frontend/dist/
+frontend/.svelte-kit/
+frontend/.next/
+
+# Локальные бэкапы проекта
+backup_v1/
+backup_v2/
+
+# Системные файлы
+Thumbs.db
+desktop.ini
+.DS_Store
