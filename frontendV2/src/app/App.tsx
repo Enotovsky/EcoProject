@@ -24,12 +24,23 @@ export default function App() {
       <div className="min-h-screen bg-[#F8FFE4] font-['Feature_Mono',sans-serif] text-black overflow-x-hidden">
       <Navigation />
       <main>
-        <section id="hero">
-          <Hero />
-        </section>
-        <section id="how">
-          <HowItWorks />
-        </section>
+        <div className="relative w-full overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <ImageWithFallback 
+              src="/scrapbook/hero_how_bg.png" 
+              alt="Hills and Grass Background"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+          <div className="relative z-10">
+            <section id="hero">
+              <Hero />
+            </section>
+            <section id="how">
+              <HowItWorks />
+            </section>
+          </div>
+        </div>
         <section id="features">
           <Features />
         </section>

@@ -5,18 +5,10 @@ import logo from '../../imports/logoes.png';
 
 export function Hero() {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden flex flex-col items-center pt-8 pb-32">
-      {/* Background Image - Green Hills */}
-      <div className="absolute inset-0 z-0">
-        <ImageWithFallback 
-          src="/scrapbook/hills_bg.png" 
-          alt="Hills Background"
-          className="w-full h-full object-cover object-top"
-        />
-      </div>
+    <div className="relative min-h-screen w-full flex flex-col items-center pt-8 pb-32">
 
       {/* Header / Logo Area */}
-      <div className="relative z-10 w-full max-w-6xl px-6 flex justify-between items-center mb-16">
+      <div className="relative z-10 w-full max-w-[95%] xl:max-w-7xl px-4 flex justify-between items-center mb-16">
         <div className="w-32 md:w-48">
           <ImageWithFallback 
             src={logo} 
@@ -35,7 +27,7 @@ export function Hero() {
       </div>
 
       {/* Main Collage Content */}
-      <div className="relative z-10 w-full max-w-5xl px-4 flex flex-col items-center justify-center text-center">
+      <div className="relative z-10 w-full max-w-[95%] xl:max-w-7xl px-4 flex flex-col items-center justify-center text-center">
         
         {/* Line 1: ПРЕВРАТИТЕ чек */}
         <motion.div 
@@ -59,7 +51,7 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Line 2: В ОТЧЕТ + Apple */}
+        {/* Line 2: В ОТЧЕТ */}
         <motion.div 
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -69,18 +61,6 @@ export function Hero() {
           <span className="font-handwriting text-7xl md:text-9xl text-black leading-none -rotate-2">
             В ОТЧЁТ
           </span>
-
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            className="absolute right-0 md:-right-12 top-0"
-          >
-            <ImageWithFallback 
-              src="/scrapbook/apple.png" 
-              alt="Apple"
-              className="w-24 md:w-32 drop-shadow-[4px_4px_8px_rgba(0,0,0,0.4)]"
-            />
-          </motion.div>
         </motion.div>
 
         {/* Line 3: О УГЛЕРОДНОМ СЛЕДЕ */}

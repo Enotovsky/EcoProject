@@ -15,10 +15,6 @@ const FAQS = [
     q: 'Что если чек распознан неправильно?',
     a: 'Убедитесь, что QR-код на чеке чётко виден, находится в фокусе и не обрезан. Попробуйте загрузить фото ещё раз при хорошем освещении.'
   },
-  {
-    q: 'Можно ли использовать это как студенческий проект?',
-    a: 'Да! Это открытый проект для повышения экологической осведомленности. Мы будем рады вашему вкладу!'
-  }
 ];
 
 export function FAQ() {
@@ -31,7 +27,7 @@ export function FAQ() {
            backgroundSize: '40px 40px'
          }}>
       
-      <div className="max-w-4xl mx-auto px-4 relative z-10">
+      <div className="max-w-[95%] xl:max-w-6xl mx-auto px-4 relative z-10">
         
         {/* Title */}
         <div className="flex flex-col items-center justify-center mb-16 relative">
@@ -51,32 +47,31 @@ export function FAQ() {
               </span>
             </div>
             
-            <div className="flex justify-center items-end gap-2 md:gap-4 relative mt-2">
-              <div className="relative rotate-[-2deg] hover:rotate-1 transition-transform">
-                <ImageWithFallback 
-                  src="/scrapbook/questions_cutout.png" 
-                  alt="ВОПРОСЫ"
-                  className="w-64 md:w-96 drop-shadow-[4px_4px_8px_rgba(0,0,0,0.3)]"
-                />
-              </div>
-              
-              <div className="w-16 md:w-24 mb-4 md:mb-8 absolute -right-16 md:-right-24 bottom-0">
-                <ImageWithFallback 
-                  src="/scrapbook/smirk_emoji.png" 
-                  alt="Smirk"
-                  className="w-full drop-shadow-[2px_2px_4px_rgba(0,0,0,0.4)]"
-                />
-              </div>
+            <div className="relative rotate-[-2deg] hover:rotate-1 transition-transform mt-2">
+              <ImageWithFallback 
+                src="/scrapbook/questions_cutout.png" 
+                alt="ВОПРОСЫ"
+                className="w-64 md:w-96 drop-shadow-[4px_4px_8px_rgba(0,0,0,0.3)]"
+              />
             </div>
           </motion.div>
         </div>
 
         {/* Accordion */}
-        <div className="flex flex-col gap-4 max-w-3xl mx-auto">
+        <div className="flex flex-col gap-4 max-w-5xl mx-auto relative mt-16 md:mt-24">
+          {/* Confused Emoji standing on the first question */}
+          <div className="absolute -top-16 md:-top-24 left-0 md:left-4 w-20 md:w-32 z-20 pointer-events-none">
+            <ImageWithFallback 
+              src="/scrapbook/confused_emoji.png" 
+              alt="Confused Emoji"
+              className="w-full drop-shadow-[4px_4px_8px_rgba(0,0,0,0.3)]"
+            />
+          </div>
+
           {FAQS.map((faq, idx) => {
             const isOpen = openIdx === idx;
             return (
-              <div key={idx} className="relative">
+              <div key={idx} className="relative z-10">
                 <button
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
                   className={`w-full flex items-center justify-between px-6 py-4 rounded-xl border border-gray-400 transition-colors duration-250 shadow-sm ${isOpen ? 'bg-[#cbe622]' : 'bg-[#D8FF00] hover:bg-[#cbe622]'}`}

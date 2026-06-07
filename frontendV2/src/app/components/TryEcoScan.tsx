@@ -116,7 +116,7 @@ export function TryEcoScan() {
         <div className="absolute inset-0 bg-green-900/10 mix-blend-multiply"></div>
       </div>
 
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-4 flex flex-col items-center">
+      <div className="relative z-10 w-full max-w-[95%] xl:max-w-7xl mx-auto px-4 flex flex-col items-center">
         {/* Title */}
         <div className="text-center flex flex-col items-center justify-center gap-2 mb-12">
           <div className="flex flex-wrap justify-center items-center gap-4">
@@ -147,7 +147,7 @@ export function TryEcoScan() {
         </div>
 
         {/* Form / Results Container (Looks like a notebook page) */}
-        <div className={`bg-white/95 backdrop-blur-md w-full rounded-2xl border border-gray-300 shadow-[12px_12px_0_rgba(0,0,0,0.15)] p-6 md:p-10 relative ${status === 'result' ? 'max-w-5xl' : 'max-w-2xl'} transition-all duration-500`}>
+        <div className={`bg-white/95 backdrop-blur-md w-full rounded-2xl border border-gray-300 shadow-[12px_12px_0_rgba(0,0,0,0.15)] p-6 md:p-10 relative ${status === 'result' ? 'max-w-full' : 'max-w-4xl'} transition-all duration-500`}>
           
           <AnimatePresence mode="wait">
             {status === 'idle' && (
@@ -172,15 +172,6 @@ export function TryEcoScan() {
 
                 <div className="space-y-4">
                   <div className="flex flex-col gap-1">
-                    <label className="font-sans font-bold text-sm">Имя</label>
-                    <input type="text" placeholder="Ваше имя" className="w-full bg-gray-100 rounded-lg px-4 py-3 font-sans border-none focus:ring-2 focus:ring-[#D8FF00]" />
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <label className="font-sans font-bold text-sm">Email</label>
-                    <input type="email" placeholder="your@email.com" className="w-full bg-gray-100 rounded-lg px-4 py-3 font-sans border-none focus:ring-2 focus:ring-[#D8FF00]" />
-                  </div>
-
-                  <div className="flex flex-col gap-1">
                     <label className="font-sans font-bold text-sm">Загрузить чек</label>
                     <div 
                       onDragEnter={handleDrag}
@@ -193,7 +184,7 @@ export function TryEcoScan() {
                       
                       {preview ? (
                         <div className="flex flex-col items-center">
-                          <img src={preview} alt="Preview" className="h-32 object-contain rounded-md mb-4 shadow-md bg-white p-1" />
+                          <img src={preview} alt="Preview" className="h-40 md:h-64 object-contain rounded-md mb-4 shadow-md bg-white p-1" />
                           <span className="font-sans font-medium text-sm text-green-400 flex items-center gap-2">
                             <CheckCircle2 size={16} /> Файл готов к загрузке
                           </span>
@@ -204,20 +195,15 @@ export function TryEcoScan() {
                       ) : (
                         <>
                           <div className="bg-white/10 p-4 rounded-lg mb-4">
-                            <FileText size={48} className="text-white" />
+                            <FileText size={64} className="text-white" />
                           </div>
-                          <p className="font-sans font-bold text-sm mb-1">
+                          <p className="font-sans font-bold text-base mb-1">
                             Нажмите или перетащите файл
                           </p>
-                          <p className="text-xs text-gray-400 font-sans">PNG, JPG или PDF ( макс. 10МБ )</p>
+                          <p className="text-sm text-gray-400 font-sans">PNG, JPG или PDF ( макс. 10МБ )</p>
                         </>
                       )}
                     </div>
-                  </div>
-
-                  <div className="flex flex-col gap-1">
-                    <label className="font-sans text-xs text-gray-500">Комментарий (необязательно)</label>
-                    <textarea placeholder="Любые дополнительные заметки..." className="w-full bg-gray-100 rounded-lg px-4 py-3 font-sans border-none focus:ring-2 focus:ring-[#D8FF00] min-h-[80px] resize-none"></textarea>
                   </div>
                 </div>
 
