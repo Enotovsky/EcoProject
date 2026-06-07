@@ -114,7 +114,10 @@ export function TryEcoScan() {
         />
         <div className="absolute inset-0 bg-[#a2d149]/20 mix-blend-multiply"></div>
         {/* Grid Texture on background only, static with document */}
-        <div className="absolute -inset-[10%] mix-blend-multiply opacity-5 overflow-hidden">
+        <div 
+          className="absolute -inset-[10%] mix-blend-multiply overflow-hidden"
+          style={{ opacity: 0.02 }}
+        >
           <ImageWithFallback src="/scrapbook/texture_1.png" alt="" className="w-full h-full object-cover max-w-none" />
         </div>
         

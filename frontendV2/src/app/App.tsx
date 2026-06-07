@@ -35,7 +35,10 @@ export default function App() {
               className="w-full h-full object-cover object-top"
             />
             {/* Grid Texture on background only, static with document */}
-            <div className="absolute -inset-[10%] mix-blend-multiply opacity-5 overflow-hidden">
+            <div 
+              className="absolute -inset-[10%] mix-blend-multiply overflow-hidden"
+              style={{ opacity: 0.02 }}
+            >
               <ImageWithFallback src="/scrapbook/texture_1.png" alt="" className="w-full h-full object-cover max-w-none" />
             </div>
             
