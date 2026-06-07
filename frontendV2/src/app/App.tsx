@@ -43,7 +43,7 @@ export default function App() {
             </div>
             
             {/* Papercut & Grunge Overlays (On background only) */}
-            <div className="absolute -inset-[10%] pointer-events-none mix-blend-color-burn opacity-30">
+            <div className="absolute -inset-[10%] pointer-events-none mix-blend-multiply opacity-5">
               <ImageWithFallback src="/scrapbook/texture_2.png" alt="" className="w-full h-full object-cover max-w-none" />
             </div>
             {/* Papercut Overlay (On background only) */}
