@@ -35,10 +35,9 @@ export default function App() {
               className="w-full h-full object-cover object-top"
             />
             {/* Grid Texture on background only, static with document */}
-            <div 
-              className="absolute inset-0 mix-blend-multiply opacity-[0.01]" 
-              style={{ backgroundImage: 'url(/scrapbook/texture_1.png)', backgroundSize: 'cover' }}
-            ></div>
+            <div className="absolute inset-0 mix-blend-multiply opacity-[0.005] overflow-hidden">
+              <ImageWithFallback src="/scrapbook/texture_1.png" alt="" className="w-full h-full object-cover max-w-none scale-[1.1] origin-center" />
+            </div>
             
             {/* Papercut & Grunge Overlays (On background only) */}
             <div className="absolute inset-0 pointer-events-none mix-blend-color-burn opacity-30">
