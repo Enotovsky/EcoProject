@@ -116,13 +116,16 @@ export function TryEcoScan() {
         {/* Grid Texture on background only, static with document */}
         <div 
           className="absolute -inset-[10%] mix-blend-multiply overflow-hidden"
-          style={{ opacity: 0.02 }}
+          style={{ opacity: 0.25 }}
         >
           <ImageWithFallback src="/scrapbook/texture_1.png" alt="" className="w-full h-full object-cover max-w-none" />
         </div>
         
         {/* Papercut & Grunge Overlays (On background only) */}
-        <div className="absolute -inset-[10%] pointer-events-none mix-blend-multiply opacity-5">
+        <div 
+          className="absolute -inset-[10%] pointer-events-none mix-blend-multiply"
+          style={{ opacity: 0.25 }}
+        >
           <ImageWithFallback src="/scrapbook/texture_2.png" alt="" className="w-full h-full object-cover max-w-none" />
         </div>
         {/* Papercut Overlay (On background only) */}
