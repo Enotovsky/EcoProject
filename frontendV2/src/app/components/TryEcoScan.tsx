@@ -125,7 +125,11 @@ export function TryEcoScan() {
         <div className="absolute -inset-[10%] pointer-events-none mix-blend-color-burn opacity-30">
           <ImageWithFallback src="/scrapbook/texture_2.png" alt="" className="w-full h-full object-cover max-w-none" />
         </div>
-        <div className="absolute -inset-[10%] pointer-events-none mix-blend-overlay opacity-50">
+        {/* Papercut Overlay (On background only) */}
+        <div 
+          className="absolute -inset-[10%] pointer-events-none mix-blend-overlay"
+          style={{ opacity: 0.005 }}
+        >
           <ImageWithFallback src="/scrapbook/texture_3.png" alt="" className="w-full h-full object-cover max-w-none" />
         </div>
       </div>
