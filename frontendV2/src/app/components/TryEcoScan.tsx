@@ -114,6 +114,10 @@ export function TryEcoScan() {
         />
         {/* Some overlay to make it less bright if needed */}
         <div className="absolute inset-0 bg-[#a2d149]/20 mix-blend-multiply"></div>
+        {/* Grid Texture glued to the background */}
+        <div className="absolute inset-0 mix-blend-multiply opacity-50">
+          <ImageWithFallback src="/scrapbook/texture_1.png" alt="" className="w-full h-full object-cover object-bottom" />
+        </div>
       </div>
 
       <div className="relative z-10 w-full max-w-[95%] xl:max-w-7xl mx-auto px-4 flex flex-col items-center">
