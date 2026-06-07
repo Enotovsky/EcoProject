@@ -2,41 +2,48 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
+import imgCarbon from '../../assets/features/carbon_footprint.png';
+import imgEcoScore from '../../assets/features/eco_score.png';
+import imgAlts from '../../assets/features/alternatives.png';
+import imgHistory from '../../assets/features/history.png';
+import imgCategories from '../../assets/features/categories.png';
+import imgReports from '../../assets/features/reports.png';
+
 const FEATURES = [
   {
     title: 'Оценка углеродного следа',
     desc: 'Показывает примерный CO₂-след покупки.',
-    img: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=400',
+    img: imgCarbon,
     rotate: 'rotate-[-3deg]'
   },
   {
     title: 'Эко-балл корзины',
     desc: 'Показывает общий рейтинг покупки по экологичности.',
-    img: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=400',
+    img: imgEcoScore,
     rotate: 'rotate-[2deg]'
   },
   {
     title: 'Альтернативные продукты',
     desc: 'Подсказывает, чем можно заменить товары с высоким следом.',
-    img: 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&q=80&w=400',
+    img: imgAlts,
     rotate: 'rotate-[-1deg]'
   },
   {
     title: 'История покупок',
     desc: 'Помогает сравнивать покупки и видеть изменения со временем.',
-    img: 'https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&q=80&w=400',
+    img: imgHistory,
     rotate: 'rotate-[4deg]'
   },
   {
     title: 'Основные категории влияния',
     desc: 'Показывает, какие категории дают самый большой вклад.',
-    img: 'https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&q=80&w=400',
+    img: imgCategories,
     rotate: 'rotate-[-2deg]'
   },
   {
     title: 'Простые визуальные отчеты',
     desc: 'Делает понятные диаграммы и короткие выводы.',
-    img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400',
+    img: imgReports,
     rotate: 'rotate-[1deg]'
   }
 ];
