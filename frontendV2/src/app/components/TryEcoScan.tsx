@@ -108,12 +108,12 @@ export function TryEcoScan() {
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <ImageWithFallback 
-          src="/scrapbook/grass_texture.png" 
+          src="/scrapbook/hero_how_bg.png" 
           alt="Grass Background"
-          className="w-full h-full object-cover opacity-90"
+          className="w-full h-full object-cover object-bottom opacity-95"
         />
         {/* Some overlay to make it less bright if needed */}
-        <div className="absolute inset-0 bg-green-900/10 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-[#a2d149]/20 mix-blend-multiply"></div>
       </div>
 
       <div className="relative z-10 w-full max-w-[95%] xl:max-w-7xl mx-auto px-4 flex flex-col items-center">

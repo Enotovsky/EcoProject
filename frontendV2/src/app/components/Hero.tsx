@@ -94,18 +94,24 @@ export function Hero() {
           </span>
         </motion.div>
 
-        {/* Arrow to next section */}
+        {/* Arrow and Button to next section */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="mt-16 relative"
+          className="mt-8 relative flex flex-col items-center gap-4"
         >
           <ImageWithFallback 
             src="/scrapbook/arrow.png" 
             alt="Arrow down"
-            className="w-16 md:w-24 -rotate-12 ml-32"
+            className="w-16 md:w-24 rotate-[-5deg] ml-8"
           />
+          <a href="#try" className="relative group inline-block">
+            <div className="absolute inset-0 bg-black rounded-xl translate-x-1 translate-y-1 transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
+            <div className="relative px-8 py-4 bg-[#D8FF00] border-4 border-black rounded-xl font-pixel text-xl md:text-2xl text-black hover:-translate-y-1 hover:-translate-x-1 transition-transform uppercase">
+              СКАНИРОВАТЬ ЧЕК
+            </div>
+          </a>
         </motion.div>
 
       </div>

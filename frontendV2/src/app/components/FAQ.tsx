@@ -60,11 +60,11 @@ export function FAQ() {
         {/* Accordion */}
         <div className="flex flex-col gap-4 max-w-5xl mx-auto relative mt-16 md:mt-24">
           {/* Confused Emoji standing on the first question */}
-          <div className="absolute -top-16 md:-top-24 left-0 md:left-4 w-20 md:w-32 z-20 pointer-events-none">
+          <div className="absolute -top-24 md:-top-32 lg:-top-40 left-0 md:-left-16 lg:-left-24 w-32 md:w-48 lg:w-64 z-20 pointer-events-none">
             <ImageWithFallback 
               src="/scrapbook/confused_emoji.png" 
               alt="Confused Emoji"
-              className="w-full drop-shadow-[4px_4px_8px_rgba(0,0,0,0.3)]"
+              className="w-full drop-shadow-[6px_6px_12px_rgba(0,0,0,0.4)] -rotate-6"
             />
           </div>
 
