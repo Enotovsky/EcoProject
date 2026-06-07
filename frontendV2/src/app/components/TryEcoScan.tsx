@@ -117,14 +117,14 @@ export function TryEcoScan() {
         <div className="absolute -inset-[10%] mix-blend-multiply opacity-5 overflow-hidden">
           <ImageWithFallback src="/scrapbook/texture_1.png" alt="" className="w-full h-full object-cover max-w-none" />
         </div>
-      </div>
-
-      {/* Papercut & Grunge Overlays (Over Content completely) */}
-      <div className="absolute -inset-[10%] z-20 pointer-events-none mix-blend-color-burn opacity-30">
-        <ImageWithFallback src="/scrapbook/texture_2.png" alt="" className="w-full h-full object-cover max-w-none" />
-      </div>
-      <div className="absolute -inset-[10%] z-20 pointer-events-none mix-blend-overlay opacity-50">
-        <ImageWithFallback src="/scrapbook/texture_3.png" alt="" className="w-full h-full object-cover max-w-none" />
+        
+        {/* Papercut & Grunge Overlays (On background only) */}
+        <div className="absolute -inset-[10%] pointer-events-none mix-blend-color-burn opacity-30">
+          <ImageWithFallback src="/scrapbook/texture_2.png" alt="" className="w-full h-full object-cover max-w-none" />
+        </div>
+        <div className="absolute -inset-[10%] pointer-events-none mix-blend-overlay opacity-50">
+          <ImageWithFallback src="/scrapbook/texture_3.png" alt="" className="w-full h-full object-cover max-w-none" />
+        </div>
       </div>
 
       <div className="relative z-10 w-full max-w-[95%] xl:max-w-7xl mx-auto px-4 flex flex-col items-center">
