@@ -21,11 +21,15 @@ export function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <div id="faq" className="relative py-24 w-full bg-[#fcfbe8] overflow-hidden"
-         style={{
-           backgroundImage: 'linear-gradient(#e0dfce 1px, transparent 1px), linear-gradient(90deg, #e0dfce 1px, transparent 1px)',
-           backgroundSize: '40px 40px'
-         }}>
+    <div id="faq" className="relative py-24 w-full bg-[#fcfbe8] overflow-hidden">
+      {/* Background Yellow Grid */}
+      <div className="absolute inset-0 z-0 opacity-50 mix-blend-multiply" 
+           style={{
+             backgroundImage: 'url(/scrapbook/yellow_grid.png)',
+             backgroundSize: '400px auto',
+             backgroundRepeat: 'repeat'
+           }} 
+      />
       
       <div className="max-w-[95%] xl:max-w-6xl mx-auto px-4 relative z-10">
         
@@ -60,11 +64,11 @@ export function FAQ() {
         {/* Accordion */}
         <div className="flex flex-col gap-4 max-w-5xl mx-auto relative mt-16 md:mt-24">
           {/* Confused Emoji standing on the first question */}
-          <div className="absolute -top-24 md:-top-32 lg:-top-40 left-0 md:-left-16 lg:-left-24 w-32 md:w-48 lg:w-64 z-20 pointer-events-none">
+          <div className="absolute -top-24 md:-top-32 lg:-top-40 right-0 md:-right-16 lg:-right-24 w-32 md:w-48 lg:w-64 z-20 pointer-events-none">
             <ImageWithFallback 
               src="/scrapbook/confused_emoji.png" 
               alt="Confused Emoji"
-              className="w-full drop-shadow-[6px_6px_12px_rgba(0,0,0,0.4)] -rotate-6"
+              className="w-full drop-shadow-[6px_6px_12px_rgba(0,0,0,0.4)] rotate-6"
             />
           </div>
 
