@@ -40,9 +40,9 @@ export function FAQ() {
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col items-center gap-4 text-center"
+            className="flex flex-col items-center text-center"
           >
-            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 relative z-10">
               <span className="font-handwriting text-5xl md:text-7xl -rotate-2">
                 ЧАСТО
               </span>
@@ -51,7 +51,7 @@ export function FAQ() {
               </span>
             </div>
             
-            <div className="relative rotate-[-2deg] hover:rotate-1 transition-transform mt-2">
+            <div className="relative rotate-[-2deg] hover:rotate-1 transition-transform -mt-2 md:-mt-6 z-20">
               <ImageWithFallback 
                 src="/scrapbook/questions_cutout.png" 
                 alt="ВОПРОСЫ"

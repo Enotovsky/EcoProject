@@ -160,7 +160,7 @@ export function TryEcoScan() {
                 className="w-32 md:w-48 -rotate-3 drop-shadow-[4px_4px_8px_rgba(0,0,0,0.4)]"
               />
               {/* Added handwritten 'e' */}
-              <span className="font-handwriting text-5xl md:text-7xl text-black font-bold absolute -right-6 md:-right-8 top-1/2 -translate-y-1/2 rotate-12 drop-shadow-[2px_2px_0_#fff]">
+              <span className="font-handwriting text-5xl md:text-7xl text-black font-bold absolute -right-6 md:-right-8 top-1/2 -translate-y-1/2 rotate-12 [text-shadow:_-2px_-2px_0_#fff,_2px_-2px_0_#fff,_-2px_2px_0_#fff,_2px_2px_0_#fff]">
                 е
               </span>
             </div>
