@@ -22,12 +22,12 @@ export default function App() {
       `}</style>
       <CustomCursor />
       
-      {/* Global Textures Overlay (Papercut & Grunge) */}
-      <div className="fixed -inset-[5%] w-[110vw] h-[110vh] z-50 pointer-events-none mix-blend-color-burn opacity-30">
-        <ImageWithFallback src="/scrapbook/texture_2.png" alt="" className="w-full h-full object-cover" />
+      {/* Global Textures Overlay (Papercut & Grunge) over everything */}
+      <div className="fixed inset-0 z-50 pointer-events-none mix-blend-color-burn opacity-30 overflow-hidden">
+        <ImageWithFallback src="/scrapbook/texture_2.png" alt="" className="w-full h-full object-cover max-w-none scale-[1.15] origin-center" />
       </div>
-      <div className="fixed -inset-[5%] w-[110vw] h-[110vh] z-50 pointer-events-none mix-blend-overlay opacity-50">
-        <ImageWithFallback src="/scrapbook/texture_3.png" alt="" className="w-full h-full object-cover" />
+      <div className="fixed inset-0 z-50 pointer-events-none mix-blend-overlay opacity-50 overflow-hidden">
+        <ImageWithFallback src="/scrapbook/texture_3.png" alt="" className="w-full h-full object-cover max-w-none scale-[1.15] origin-center" />
       </div>
 
       <div className="min-h-screen bg-[#F8FFE4] font-mono text-black overflow-x-hidden relative">
@@ -40,10 +40,11 @@ export default function App() {
               alt="Hills and Grass Background"
               className="w-full h-full object-cover object-top"
             />
-            {/* Grid Texture glued to the background so it doesn't "slide" over it */}
-            <div className="absolute inset-0 mix-blend-multiply opacity-50">
-              <ImageWithFallback src="/scrapbook/texture_1.png" alt="" className="w-full h-full object-cover object-top" />
-            </div>
+            {/* Grid Texture glued to the background, static via CSS, and barely visible */}
+            <div 
+              className="absolute inset-0 mix-blend-multiply opacity-10" 
+              style={{ backgroundImage: 'url(/scrapbook/texture_1.png)', backgroundAttachment: 'fixed', backgroundSize: 'cover' }}
+            ></div>
           </div>
           <div className="relative z-10">
             <section id="hero">
