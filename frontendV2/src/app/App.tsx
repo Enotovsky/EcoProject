@@ -21,7 +21,19 @@ export default function App() {
         }
       `}</style>
       <CustomCursor />
-      <div className="min-h-screen bg-[#F8FFE4] font-['Feature_Mono',sans-serif] text-black overflow-x-hidden">
+      
+      {/* Global Textures Overlay */}
+      <div className="fixed inset-0 z-50 pointer-events-none mix-blend-multiply opacity-40">
+        <ImageWithFallback src="/scrapbook/texture_1.png" alt="" className="w-full h-full object-cover" />
+      </div>
+      <div className="fixed inset-0 z-50 pointer-events-none mix-blend-color-burn opacity-30">
+        <ImageWithFallback src="/scrapbook/texture_2.png" alt="" className="w-full h-full object-cover" />
+      </div>
+      <div className="fixed inset-0 z-50 pointer-events-none mix-blend-overlay opacity-50">
+        <ImageWithFallback src="/scrapbook/texture_3.png" alt="" className="w-full h-full object-cover" />
+      </div>
+
+      <div className="min-h-screen bg-[#F8FFE4] font-mono text-black overflow-x-hidden relative">
       <Navigation />
       <main>
         <div className="relative w-full overflow-hidden">
