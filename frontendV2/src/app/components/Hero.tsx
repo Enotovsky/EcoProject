@@ -16,14 +16,7 @@ export function Hero() {
             className="w-full h-auto object-contain drop-shadow-md"
           />
         </div>
-        {/* Simple Navigation Links like in mockup */}
-        <nav className="hidden md:flex gap-8 font-mono text-black text-sm uppercase font-bold">
-          <a href="#" className="hover:underline decoration-wavy underline-offset-4">Главный экран</a>
-          <a href="#how" className="hover:underline decoration-wavy underline-offset-4">Как это работает?</a>
-          <a href="#features" className="hover:underline decoration-wavy underline-offset-4">Возможности</a>
-          <a href="#faq" className="hover:underline decoration-wavy underline-offset-4">FAQ</a>
-          <a href="#try" className="hover:underline decoration-wavy underline-offset-4">Попробовать</a>
-        </nav>
+        {/* Removed duplicate Navigation Links */}
       </div>
 
       {/* Main Collage Content */}
