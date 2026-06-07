@@ -56,7 +56,7 @@ export function HowItWorks() {
           >
             <ImageWithFallback 
               src="/scrapbook/note_2.png"
-              alt="02 OCR распознаёт текст"
+              alt="02 Считывание QR-кода"
               className="w-full h-auto drop-shadow-[8px_8px_16px_rgba(0,0,0,0.3)] hover:drop-shadow-[12px_12px_24px_rgba(0,0,0,0.4)] transition-all"
             />
           </motion.div>
