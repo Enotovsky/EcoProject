@@ -161,7 +161,7 @@ export function TryEcoScan() {
               />
               {/* Added handwritten 'e' */}
               <span className="font-handwriting text-5xl md:text-7xl text-black font-bold absolute -right-6 md:-right-8 top-1/2 -translate-y-1/2 rotate-12 [text-shadow:_-2px_-2px_0_#fff,_2px_-2px_0_#fff,_-2px_2px_0_#fff,_2px_2px_0_#fff]">
-                е
+                Е
               </span>
             </div>
           </div>

@@ -51,7 +51,7 @@ export function FAQ() {
               </span>
             </div>
             
-            <div className="relative rotate-[-2deg] hover:rotate-1 transition-transform -mt-2 md:-mt-6 z-20">
+            <div className="relative rotate-[-2deg] hover:rotate-1 transition-transform -mt-6 md:-mt-12 z-20">
               <ImageWithFallback 
                 src="/scrapbook/questions_cutout.png" 
                 alt="ВОПРОСЫ"
