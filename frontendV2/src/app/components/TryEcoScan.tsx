@@ -81,6 +81,9 @@ export function TryEcoScan() {
       const apiUrl = import.meta.env.VITE_API_URL || '';
       const response = await fetch(`${apiUrl}/api/analyze`, {
         method: 'POST',
+        headers: {
+          'ngrok-skip-browser-warning': 'true'
+        },
         body: formData,
       });
 
