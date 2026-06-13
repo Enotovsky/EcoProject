@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 
 const SECTIONS = [
-  { id: 'how', label: 'Как это работает' },
-  { id: 'features', label: 'Что может EcoScan' },
-  { id: 'try', label: 'Попробовать' },
-  { id: 'faq', label: 'FAQ' },
-  { id: 'contacts', label: 'Контакты' },
+  { id: 'how', label: 'Как это работает', showOnMobile: false },
+  { id: 'features', label: 'Что может EcoScan', showOnMobile: false },
+  { id: 'try', label: 'Попробовать', showOnMobile: true },
+  { id: 'faq', label: 'FAQ', showOnMobile: true },
+  { id: 'contacts', label: 'Контакты', showOnMobile: true },
 ];
 
 export function Navigation() {
@@ -52,15 +52,15 @@ export function Navigation() {
   const activeTarget = hoveredSection || activeSection;
 
   return (
-    <div className="fixed top-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 z-[100] w-[95vw] md:w-auto">
-      <nav className="relative bg-white/80 backdrop-blur-md rounded-3xl md:rounded-full px-4 md:px-6 py-3 md:py-4 shadow-sm border border-black/10">
-        <ul className="flex flex-wrap justify-center items-center gap-x-3 gap-y-2 sm:gap-x-4 md:gap-6 font-['Feature_Mono',sans-serif] text-[10px] sm:text-xs md:text-sm tracking-tight relative px-1 md:px-0">
+    <div className="fixed top-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 z-[100] w-[90vw] sm:w-[95vw] md:w-auto">
+      <nav className="relative bg-white/80 backdrop-blur-md rounded-full px-4 md:px-6 py-3 md:py-4 shadow-sm border border-black/10">
+        <ul className="flex justify-center items-center gap-x-4 md:gap-6 font-['Feature_Mono',sans-serif] text-[11px] sm:text-xs md:text-sm tracking-tight relative px-1 md:px-0">
           {SECTIONS.map((section) => {
             const isActive = activeTarget === section.id;
             return (
               <li 
                 key={section.id} 
-                className="relative"
+                className={`relative ${section.showOnMobile ? '' : 'hidden sm:block'}`}
                 onMouseEnter={() => setHoveredSection(section.id)}
                 onMouseLeave={() => setHoveredSection(null)}
               >
