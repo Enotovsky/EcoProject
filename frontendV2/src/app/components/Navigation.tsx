@@ -52,9 +52,9 @@ export function Navigation() {
   const activeTarget = hoveredSection || activeSection;
 
   return (
-    <div className="fixed top-4 right-4 z-50 z-[100] md:right-8">
-      <nav className="relative bg-white/80 backdrop-blur-md rounded-full px-6 py-4 shadow-sm border border-black/10">
-        <ul className="flex items-center gap-6 font-['Feature_Mono',sans-serif] text-sm tracking-tight relative">
+    <div className="fixed top-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 z-[100] w-[95vw] md:w-auto">
+      <nav className="relative bg-white/80 backdrop-blur-md rounded-full px-2 md:px-6 py-3 md:py-4 shadow-sm border border-black/10">
+        <ul className="flex items-center gap-4 md:gap-6 font-['Feature_Mono',sans-serif] text-[10px] sm:text-xs md:text-sm tracking-tight relative overflow-x-auto no-scrollbar whitespace-nowrap px-2 md:px-0">
           {SECTIONS.map((section) => {
             const isActive = activeTarget === section.id;
             return (

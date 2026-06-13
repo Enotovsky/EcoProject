@@ -28,7 +28,7 @@ export function Hero() {
           animate={{ y: 0, opacity: 1 }}
           className="flex flex-wrap justify-center items-center gap-4 md:gap-8 mb-4 relative z-20"
         >
-          <span className="font-pixel text-5xl md:text-7xl lg:text-[5.5rem] text-black leading-none drop-shadow-[4px_4px_0_#fff]">
+          <span className="font-pixel text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] text-black leading-none drop-shadow-[4px_4px_0_#fff]">
             ПРЕВРАТИТЕ
           </span>
           
@@ -39,7 +39,7 @@ export function Hero() {
             <ImageWithFallback 
               src="/scrapbook/receipt_cutout.png" 
               alt="Чек"
-              className="w-40 md:w-64 drop-shadow-[8px_8px_16px_rgba(0,0,0,0.5)]"
+              className="w-32 sm:w-40 md:w-64 drop-shadow-[8px_8px_16px_rgba(0,0,0,0.5)]"
             />
           </motion.div>
         </motion.div>
@@ -51,7 +51,7 @@ export function Hero() {
           transition={{ delay: 0.1 }}
           className="flex flex-wrap justify-center items-center gap-6 relative z-10 mb-8"
         >
-          <span className="font-handwriting text-7xl md:text-9xl text-black leading-none -rotate-2">
+          <span className="font-handwriting text-6xl sm:text-7xl md:text-9xl text-black leading-none -rotate-2">
             В ОТЧЁТ
           </span>
         </motion.div>
@@ -63,7 +63,7 @@ export function Hero() {
           transition={{ delay: 0.2 }}
           className="flex flex-wrap justify-center items-center gap-3 relative z-30"
         >
-          <span className="font-pixel text-4xl md:text-6xl lg:text-[4.5rem] text-black leading-none drop-shadow-[3px_3px_0_#fff]">
+          <span className="font-pixel text-3xl sm:text-4xl md:text-6xl lg:text-[4.5rem] text-black leading-none drop-shadow-[3px_3px_0_#fff]">
             О УГЛЕРОДНОМ
           </span>
         </motion.div>
@@ -75,14 +75,14 @@ export function Hero() {
           transition={{ delay: 0.3 }}
           className="flex flex-wrap justify-center items-center gap-1 relative z-30 mt-4 md:mt-6"
         >
-          <div className="relative w-16 md:w-24 h-16 md:h-24 -rotate-6 mr-1 md:mr-2">
+          <div className="relative w-12 sm:w-16 md:w-24 h-12 sm:h-16 md:h-24 -rotate-6 mr-1 md:mr-2">
             <ImageWithFallback 
               src="/scrapbook/fingerprint_c.png" 
               alt="С"
               className="w-full h-full object-contain drop-shadow-[2px_2px_4px_rgba(0,0,0,0.2)]"
             />
           </div>
-          <span className="font-pixel text-4xl md:text-6xl lg:text-[5rem] text-black leading-none drop-shadow-[3px_3px_0_#fff]">
+          <span className="font-pixel text-4xl sm:text-4xl md:text-6xl lg:text-[5rem] text-black leading-none drop-shadow-[3px_3px_0_#fff]">
             ЛЕДЕ
           </span>
         </motion.div>
