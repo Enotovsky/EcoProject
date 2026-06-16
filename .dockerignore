@@ -5,8 +5,6 @@ __pycache__/
 .git/
 .gitignore
 .env
-frontendV2/
-frontend/
 *.jpg
 *.jpeg
 *.png

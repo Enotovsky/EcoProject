@@ -391,7 +391,7 @@ async def analyze_receipt(file: UploadFile = File(...)):
 # =============================================================================
 # Раздача статических файлов фронтенда (SPA) — если сборка существует
 # =============================================================================
-frontend_dist_path = os.path.join(os.path.dirname(__file__), "frontend", "dist")
+frontend_dist_path = os.path.join(os.path.dirname(__file__), "frontendV2", "dist")
 
 if os.path.isdir(frontend_dist_path):
     app.mount("/assets", StaticFiles(directory=os.path.join(frontend_dist_path, "assets")), name="assets")
