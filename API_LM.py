@@ -1,9 +1,10 @@
 import json
+import os
 from openai import OpenAI
 
 
-class LMStudioError(Exception):
-    """Исключение при обращении к серверу LM Studio (соединение, отсутствие моделей и т.д.)"""
+class GroqAPIError(Exception):
+    """Исключение при обращении к серверу Groq (соединение, отсутствие ключа и т.д.)"""
     pass
 
 
@@ -13,9 +14,13 @@ class LLMResponseError(Exception):
 
 
 class EcoScanAI:
-    def __init__(self, base_url="http://localhost:1234/v1", api_key="lm-studio"):
-        # Инициализируем клиент, указывая адрес локального сервера LM Studio
-        self.client = OpenAI(base_url=base_url, api_key=api_key)
+    def __init__(self, base_url="https://api.groq.com/openai/v1", api_key=None):
+        # Инициализируем клиент, указывая адрес сервера Groq
+        self.api_key = api_key or os.getenv("GROQ_API_KEY")
+        if not self.api_key:
+            raise GroqAPIError("Ключ GROQ_API_KEY не найден. Добавьте его в файл .env")
+            
+        self.client = OpenAI(base_url=base_url, api_key=self.api_key)
 
         # Задаем тот самый системный промт, который мы протестировали
         self.system_prompt = (
@@ -77,10 +82,10 @@ class EcoScanAI:
         )
 
     def analyze_receipt_text(self, raw_text: str) -> list:
-        """Отправляет текст чека в LM Studio и возвращает структурированный массив"""
+        """Отправляет текст чека в Groq API и возвращает структурированный массив"""
         try:
             response = self.client.chat.completions.create(
-                model="local-model",  # Сервер LM Studio проигнорирует имя и вызовет активную модель
+                model="llama-3.3-70b-versatile",
                 messages=[
                     {"role": "system", "content": self.system_prompt},
                     {"role": "user", "content": raw_text}
@@ -91,6 +96,15 @@ class EcoScanAI:
             # Получаем сырой текстовый ответ (JSON-строку) от нейросети
             json_string = response.choices[0].message.content.strip()
 
+            # Очистка если модель всё же вернула markdown (иногда Groq может грешить)
+            if json_string.startswith("```json"):
+                json_string = json_string[7:]
+            if json_string.startswith("```"):
+                json_string = json_string[3:]
+            if json_string.endswith("```"):
+                json_string = json_string[:-3]
+            json_string = json_string.strip()
+
             # Превращаем JSON-строку в обычный список Python
             parsed_data = json.loads(json_string)
             if not isinstance(parsed_data, list):
@@ -100,26 +114,22 @@ class EcoScanAI:
         except json.JSONDecodeError as e:
             raise LLMResponseError(
                 f"Не удалось распознать структуру ответа нейросети как JSON. "
-                f"Попробуйте отправить чек повторно. Подробности: {e}"
+                f"Попробуйте отправить чек повторно. Подробности: {e}\nОтвет: {json_string}"
             )
         except Exception as e:
             error_msg = str(e)
-            # Если LM Studio возвращает ошибку о том, что модели не загружены
-            if "No models loaded" in error_msg:
-                raise LMStudioError(
-                    "В LM Studio не загружена модель! Откройте интерфейс LM Studio и выберите/загрузите модель "
-                    "(например, Qwen 2.5), либо выполните команду 'lms load qwen2.5-14b-instruct' в терминале."
+            if "Connection error" in error_msg or "Failed to establish a new connection" in error_msg:
+                raise GroqAPIError(
+                    "Не удалось подключиться к серверам Groq. Проверьте ваше интернет-соединение."
                 )
-            # Если сервер вообще выключен или недоступен
-            elif "Connection error" in error_msg or "Failed to establish a new connection" in error_msg:
-                raise LMStudioError(
-                    "Не удалось подключиться к LM Studio на порту 1234. Убедитесь, что программа LM Studio запущена."
-                )
-            raise LMStudioError(f"Ошибка при работе с LM Studio: {error_msg}")
+            raise GroqAPIError(f"Ошибка при работе с Groq API: {error_msg}")
 
 
 # --- ПРИМЕР ИСПОЛЬЗОВАНИЯ В БЭКЭНДЕ ---
 if __name__ == "__main__":
+    # Задайте ключ здесь для теста, если его нет в окружении
+    # os.environ["GROQ_API_KEY"] = "gsk_..."
+    
     # 1. Создаем экземпляр нашего ИИ-модуля
     ai_module = EcoScanAI()
 
@@ -127,7 +137,7 @@ if __name__ == "__main__":
     extracted_ocr_text = "1. Мол.Дом.в дер.3.2% 99.90\n2. ПАКЕТ-МАЙКА БОЛ. 15.00"
 
     # 3. Отправляем в модель
-    print("Отправка запроса в локальную модель Qwen 2.5...")
+    print("Отправка запроса в Groq (llama-3.3-70b-versatile)...")
     result = ai_module.analyze_receipt_text(extracted_ocr_text)
 
     # 4. На выходе получили чистые данные, с которыми бэкэнд может работать!
