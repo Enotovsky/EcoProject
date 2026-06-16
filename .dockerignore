@@ -1,0 +1,14 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.git/
+.gitignore
+.env
+frontendV2/
+frontend/
+*.jpg
+*.jpeg
+*.png
+.idea/
+.vscode/
