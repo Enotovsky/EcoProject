@@ -389,6 +389,36 @@ async def analyze_receipt(file: UploadFile = File(...)):
 
 
 # =============================================================================
+# Кэширование статики — ускоряет повторные загрузки сайта
+# =============================================================================
+# Расширения статических ассетов (картинки, шрифты, данные), которые почти
+# не меняются и которые можно смело кэшировать надолго.
+_STATIC_ASSET_EXTS = (
+    ".webp", ".png", ".jpg", ".jpeg", ".gif", ".svg", ".ico",
+    ".woff", ".woff2", ".ttf", ".otf", ".eot", ".csv",
+)
+
+
+@app.middleware("http")
+async def add_cache_headers(request, call_next):
+    response = await call_next(request)
+    path = request.url.path
+    content_type = response.headers.get("content-type", "")
+
+    if path.startswith("/assets/"):
+        # Vite добавляет хэш содержимого в имя файла → можно кэшировать вечно.
+        response.headers["Cache-Control"] = "public, max-age=31536000, immutable"
+    elif content_type.startswith("text/html"):
+        # index.html должен обновляться после каждого деплоя (ссылается на новые хэши).
+        response.headers["Cache-Control"] = "no-cache"
+    elif path.lower().endswith(_STATIC_ASSET_EXTS):
+        # Ассеты без хэша в имени — кэш на 30 дней с фоновой ревалидацией.
+        response.headers["Cache-Control"] = "public, max-age=2592000, stale-while-revalidate=86400"
+
+    return response
+
+
+# =============================================================================
 # Раздача статических файлов фронтенда (SPA) — если сборка существует
 # =============================================================================
 frontend_dist_path = os.path.join(os.path.dirname(__file__), "frontendV2", "dist")

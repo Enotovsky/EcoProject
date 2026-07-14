@@ -8,6 +8,8 @@
       <title>сайт финал</title>
       <meta name="description" content="This web application allows users to easily customize and position logos on their designs, enhancing branding and visual appeal for businesses." />
       <meta name="robots" content="noindex, nofollow" />
+      <!-- Ранняя загрузка фона первого экрана, чтобы он появился без задержки -->
+      <link rel="preload" as="image" href="/scrapbook/hero_how_bg.webp" type="image/webp" />
       <style>
         /* Фон совпадает с экраном загрузки (Loader.tsx), чтобы не было вспышки до старта React */
         html, body { height: 100%; margin: 0; background-color: #F8FFE4; }
