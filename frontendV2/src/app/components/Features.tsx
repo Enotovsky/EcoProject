@@ -5,32 +5,32 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 const FEATURES = [
   {
     title: 'Оценка углеродного следа',
-    img: '/scrapbook/feature_1.png',
+    img: '/scrapbook/feature_1.webp',
     rotate: 'rotate-[-3deg]'
   },
   {
     title: 'Эко-балл корзины',
-    img: '/scrapbook/feature_2.png',
+    img: '/scrapbook/feature_2.webp',
     rotate: 'rotate-[2deg]'
   },
   {
     title: 'Альтернативные продукты',
-    img: '/scrapbook/feature_3.png',
+    img: '/scrapbook/feature_3.webp',
     rotate: 'rotate-[-1deg]'
   },
   {
     title: 'История покупок',
-    img: '/scrapbook/feature_4.png',
+    img: '/scrapbook/feature_4.webp',
     rotate: 'rotate-[4deg]'
   },
   {
     title: 'Основные категории влияния',
-    img: '/scrapbook/feature_5.png',
+    img: '/scrapbook/feature_5.webp',
     rotate: 'rotate-[-2deg]'
   },
   {
     title: 'Простые визуальные отчёты',
-    img: '/scrapbook/feature_6.png',
+    img: '/scrapbook/feature_6.webp',
     rotate: 'rotate-[1deg]'
   }
 ];
@@ -41,7 +41,7 @@ export function Features() {
       {/* Background Yellow Grid */}
       <div className="absolute inset-0 z-0 opacity-50 mix-blend-multiply" 
            style={{
-             backgroundImage: 'url(/scrapbook/yellow_grid.png)',
+             backgroundImage: 'url(/scrapbook/yellow_grid.webp)',
              backgroundSize: '400px auto',
              backgroundRepeat: 'repeat'
            }} 
@@ -62,7 +62,7 @@ export function Features() {
             </span>
             <div className="relative rotate-2 hover:-rotate-1 transition-transform cursor-default">
               <ImageWithFallback 
-                src="/scrapbook/mozhet_cutout.png" 
+                src="/scrapbook/mozhet_cutout.webp" 
                 alt="МОЖЕТ"
                 className="w-48 md:w-80 drop-shadow-[4px_4px_8px_rgba(0,0,0,0.3)]"
               />

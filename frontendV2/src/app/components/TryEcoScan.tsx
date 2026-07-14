@@ -111,7 +111,7 @@ export function TryEcoScan() {
       {/* Background Image & Grid (Behind Content) */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <ImageWithFallback 
-          src="/scrapbook/hero_how_bg.png" 
+          src="/scrapbook/hero_how_bg.webp" 
           alt="Grass Background"
           className="w-full h-full object-cover object-bottom opacity-95 saturate-150 contrast-110"
         />
@@ -121,7 +121,7 @@ export function TryEcoScan() {
           className="absolute -inset-[10%] mix-blend-multiply overflow-hidden"
           style={{ opacity: 0.25 }}
         >
-          <ImageWithFallback src="/scrapbook/texture_1.png" alt="" className="w-full h-full object-cover max-w-none" />
+          <ImageWithFallback src="/scrapbook/texture_1.webp" alt="" className="w-full h-full object-cover max-w-none" />
         </div>
         
         {/* Papercut & Grunge Overlays (On background only) */}
@@ -129,14 +129,14 @@ export function TryEcoScan() {
           className="absolute -inset-[10%] pointer-events-none mix-blend-overlay"
           style={{ opacity: 0.25 }}
         >
-          <ImageWithFallback src="/scrapbook/texture_2.png" alt="" className="w-full h-full object-cover max-w-none" />
+          <ImageWithFallback src="/scrapbook/texture_2.webp" alt="" className="w-full h-full object-cover max-w-none" />
         </div>
         {/* Papercut Overlay (On background only) */}
         <div 
           className="absolute -inset-[10%] pointer-events-none mix-blend-overlay"
           style={{ opacity: 0.1 }}
         >
-          <ImageWithFallback src="/scrapbook/texture_3.png" alt="" className="w-full h-full object-cover max-w-none" />
+          <ImageWithFallback src="/scrapbook/texture_3.webp" alt="" className="w-full h-full object-cover max-w-none" />
         </div>
       </div>
 
@@ -158,7 +158,7 @@ export function TryEcoScan() {
             </span>
             <div className="relative flex items-center justify-center">
               <ImageWithFallback 
-                src="/scrapbook/receipt_cutout.png" 
+                src="/scrapbook/receipt_cutout.webp" 
                 alt="чек"
                 className="w-32 md:w-48 -rotate-3 drop-shadow-[4px_4px_8px_rgba(0,0,0,0.4)]"
               />

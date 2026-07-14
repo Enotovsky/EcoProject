@@ -32,7 +32,7 @@ export default function App() {
           {/* Background Image & Grid (Behind Content) */}
           <div className="absolute inset-0 z-0 overflow-hidden">
             <ImageWithFallback 
-              src="/scrapbook/hero_how_bg.png" 
+              src="/scrapbook/hero_how_bg.webp" 
               alt="Hills and Grass Background"
               className="w-full h-full object-cover object-top saturate-150 contrast-110"
             />
@@ -41,7 +41,7 @@ export default function App() {
               className="absolute -inset-[10%] mix-blend-multiply overflow-hidden"
               style={{ opacity: 0.25 }}
             >
-              <ImageWithFallback src="/scrapbook/texture_1.png" alt="" className="w-full h-full object-cover max-w-none" />
+              <ImageWithFallback src="/scrapbook/texture_1.webp" alt="" className="w-full h-full object-cover max-w-none" />
             </div>
             
             {/* Papercut & Grunge Overlays (On background only) */}
@@ -49,14 +49,14 @@ export default function App() {
               className="absolute -inset-[10%] pointer-events-none mix-blend-overlay"
               style={{ opacity: 0.25 }}
             >
-              <ImageWithFallback src="/scrapbook/texture_2.png" alt="" className="w-full h-full object-cover max-w-none" />
+              <ImageWithFallback src="/scrapbook/texture_2.webp" alt="" className="w-full h-full object-cover max-w-none" />
             </div>
             {/* Papercut Overlay (On background only) */}
             <div 
               className="absolute -inset-[10%] pointer-events-none mix-blend-overlay"
               style={{ opacity: 0.1 }}
             >
-              <ImageWithFallback src="/scrapbook/texture_3.png" alt="" className="w-full h-full object-cover max-w-none" />
+              <ImageWithFallback src="/scrapbook/texture_3.webp" alt="" className="w-full h-full object-cover max-w-none" />
             </div>
           </div>
           

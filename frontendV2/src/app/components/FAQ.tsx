@@ -25,7 +25,7 @@ export function FAQ() {
       {/* Background Yellow Grid */}
       <div className="absolute inset-0 z-0 opacity-50 mix-blend-multiply" 
            style={{
-             backgroundImage: 'url(/scrapbook/yellow_grid.png)',
+             backgroundImage: 'url(/scrapbook/yellow_grid.webp)',
              backgroundSize: '400px auto',
              backgroundRepeat: 'repeat'
            }} 
@@ -53,7 +53,7 @@ export function FAQ() {
             
             <div className="relative rotate-[-2deg] hover:rotate-1 transition-transform -mt-6 md:-mt-12 z-20">
               <ImageWithFallback 
-                src="/scrapbook/questions_cutout.png" 
+                src="/scrapbook/questions_cutout.webp" 
                 alt="ВОПРОСЫ"
                 className="w-64 md:w-96 drop-shadow-[4px_4px_8px_rgba(0,0,0,0.3)]"
               />
@@ -66,7 +66,7 @@ export function FAQ() {
           {/* Confused Emoji standing on the first question */}
           <div className="absolute -top-24 md:-top-32 lg:-top-40 right-0 md:-right-16 lg:-right-24 w-32 md:w-48 lg:w-64 z-20 pointer-events-none">
             <ImageWithFallback 
-              src="/scrapbook/confused_emoji.png" 
+              src="/scrapbook/confused_emoji.webp" 
               alt="Confused Emoji"
               className="w-full drop-shadow-[6px_6px_12px_rgba(0,0,0,0.4)] rotate-6"
             />

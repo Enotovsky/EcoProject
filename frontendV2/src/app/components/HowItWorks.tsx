@@ -39,7 +39,7 @@ export function HowItWorks() {
             className="absolute top-0 left-0 md:left-[5%] w-64 md:w-80 -rotate-2 cursor-pointer transition-transform duration-300 ease-out z-10"
           >
             <ImageWithFallback 
-              src="/scrapbook/note_1.png"
+              src="/scrapbook/note_1.webp"
               alt="01 Загрузите чек"
               className="w-full h-auto drop-shadow-[8px_8px_16px_rgba(0,0,0,0.3)] hover:drop-shadow-[12px_12px_24px_rgba(0,0,0,0.4)] transition-all"
             />
@@ -55,7 +55,7 @@ export function HowItWorks() {
             className="absolute top-[280px] md:top-12 left-[10%] md:left-[40%] lg:left-[45%] w-64 md:w-80 rotate-3 cursor-pointer transition-transform duration-300 ease-out z-10"
           >
             <ImageWithFallback 
-              src="/scrapbook/note_2.png"
+              src="/scrapbook/note_2.webp"
               alt="02 Считывание QR-кода"
               className="w-full h-auto drop-shadow-[8px_8px_16px_rgba(0,0,0,0.3)] hover:drop-shadow-[12px_12px_24px_rgba(0,0,0,0.4)] transition-all"
             />
@@ -70,7 +70,7 @@ export function HowItWorks() {
             className="absolute top-[560px] md:top-[-40px] lg:top-[-60px] right-[5%] md:right-[5%] lg:right-[0%] w-64 md:w-80 z-20 pointer-events-none"
           >
             <ImageWithFallback 
-              src="/scrapbook/paperclip.png" 
+              src="/scrapbook/paperclip.webp" 
               alt="Paperclip"
               className="w-full h-auto drop-shadow-[6px_6px_12px_rgba(0,0,0,0.4)]"
             />
@@ -87,7 +87,7 @@ export function HowItWorks() {
             className="absolute top-[840px] md:top-[350px] lg:top-[380px] left-[5%] md:left-[35%] lg:left-[35%] w-64 md:w-80 -rotate-1 cursor-pointer transition-transform duration-300 ease-out z-10"
           >
             <ImageWithFallback 
-              src="/scrapbook/note_3.png"
+              src="/scrapbook/note_3.webp"
               alt="03 ИИ классифицирует продукты"
               className="w-full h-auto drop-shadow-[8px_8px_16px_rgba(0,0,0,0.3)] hover:drop-shadow-[12px_12px_24px_rgba(0,0,0,0.4)] transition-all"
             />
@@ -103,7 +103,7 @@ export function HowItWorks() {
             className="absolute top-[1120px] md:top-[380px] lg:top-[400px] right-[10%] md:right-[15%] lg:right-[5%] w-64 md:w-80 rotate-2 cursor-pointer transition-transform duration-300 ease-out z-10"
           >
             <ImageWithFallback 
-              src="/scrapbook/note_4.png"
+              src="/scrapbook/note_4.webp"
               alt="04 EcoScan показывает результат"
               className="w-full h-auto drop-shadow-[8px_8px_16px_rgba(0,0,0,0.3)] hover:drop-shadow-[12px_12px_24px_rgba(0,0,0,0.4)] transition-all"
             />

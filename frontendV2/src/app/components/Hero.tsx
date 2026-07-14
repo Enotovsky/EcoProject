@@ -37,7 +37,7 @@ export function Hero() {
             className="relative -rotate-3"
           >
             <ImageWithFallback 
-              src="/scrapbook/receipt_cutout.png" 
+              src="/scrapbook/receipt_cutout.webp" 
               alt="Чек"
               className="w-[20vw] sm:w-40 md:w-64 drop-shadow-[8px_8px_16px_rgba(0,0,0,0.5)]"
             />
@@ -77,7 +77,7 @@ export function Hero() {
         >
           <div className="relative w-[12vw] sm:w-16 md:w-24 h-[12vw] sm:h-16 md:h-24 -rotate-6 mr-1 md:mr-2">
             <ImageWithFallback 
-              src="/scrapbook/fingerprint_c.png" 
+              src="/scrapbook/fingerprint_c.webp" 
               alt="С"
               className="w-full h-full object-contain drop-shadow-[2px_2px_4px_rgba(0,0,0,0.2)]"
             />
@@ -95,7 +95,7 @@ export function Hero() {
           className="mt-8 relative flex flex-col items-center gap-4"
         >
           <ImageWithFallback 
-            src="/scrapbook/arrow.png" 
+            src="/scrapbook/arrow.webp" 
             alt="Arrow down"
             className="w-16 md:w-24 rotate-[-5deg] ml-8"
           />
