@@ -11,6 +11,7 @@ import { TryEcoScan } from './components/TryEcoScan';
 import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
 import { CustomCursor } from './components/CustomCursor';
+import { Loader } from './components/Loader';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           cursor: none !important;
         }
       `}</style>
+      <Loader />
       <CustomCursor />
       
       <div className="min-h-screen bg-[#F8FFE4] font-mono text-black overflow-x-hidden relative">

@@ -83,7 +83,7 @@ export function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: idx * 0.1, duration: 0.5, type: "spring" }}
-              whileHover={{ scale: 1.05, rotate: 0, zIndex: 10 }}
+              whileHover={{ scale: 1.05, rotate: 0, zIndex: 10, transition: { duration: 0.2, delay: 0 } }}
               className={`relative bg-white p-3 pb-6 shadow-[8px_8px_0_rgba(0,0,0,0.2)] ${feature.rotate} cursor-pointer transition-transform`}
             >
               {/* Tape */}
