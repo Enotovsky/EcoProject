@@ -9,47 +9,9 @@
       <meta name="description" content="This web application allows users to easily customize and position logos on their designs, enhancing branding and visual appeal for businesses." />
       <meta name="robots" content="noindex, nofollow" />
       <style>
-        html, body { height: 100%; margin: 0; background-color: #0b1120; } /* Темный фон, как в проекте */
+        /* Фон совпадает с экраном загрузки (Loader.tsx), чтобы не было вспышки до старта React */
+        html, body { height: 100%; margin: 0; background-color: #F8FFE4; }
         #root { height: 100%; display: flex; flex-direction: column; }
-        
-        /* Стили для прелоадера */
-        .preloader {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          height: 100vh;
-          width: 100vw;
-          font-family: 'Inter', sans-serif;
-          color: #a3e635; /* Зеленый цвет EcoScan */
-        }
-        
-        .spinner {
-          width: 50px;
-          height: 50px;
-          border: 4px solid rgba(163, 230, 53, 0.2);
-          border-left-color: #a3e635;
-          border-radius: 50%;
-          animation: spin 1s linear infinite;
-          margin-bottom: 20px;
-        }
-
-        .preloader-text {
-          font-size: 1.2rem;
-          font-weight: 500;
-          letter-spacing: 1px;
-          animation: pulse 1.5s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-
-        @keyframes pulse {
-          0%, 100% { opacity: 0.6; }
-          50% { opacity: 1; }
-        }
       </style>
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,12 +21,7 @@
 
     <body>
       
-      <div id="root">
-        <div class="preloader">
-          <div class="spinner"></div>
-          <div class="preloader-text">EcoScan...</div>
-        </div>
-      </div>
+      <div id="root"></div>
       <script type="module" src="/src/main.tsx"></script>
       
     </body>

@@ -56,16 +56,6 @@ export function Loader() {
       className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#F8FFE4] transition-opacity duration-[600ms] ease-in-out"
       style={{ opacity: hidden ? 0 : 1, pointerEvents: hidden ? 'none' : 'auto' }}
     >
-      {/* Фоновая клетчатая текстура в стиле сайта */}
-      <div
-        className="absolute inset-0 opacity-40 mix-blend-multiply"
-        style={{
-          backgroundImage: 'url(/scrapbook/yellow_grid.png)',
-          backgroundSize: '400px auto',
-          backgroundRepeat: 'repeat'
-        }}
-      />
-
       <div className="relative z-10 flex flex-col items-center gap-8 px-6 text-center">
         {/* Логотип с лёгкой «покачивающейся» анимацией */}
         <motion.img
