@@ -12,8 +12,10 @@
       <link rel="preload" as="image" href="/scrapbook/hero_how_bg.webp" type="image/webp" />
       <style>
         /* Фон совпадает с экраном загрузки (Loader.tsx), чтобы не было вспышки до старта React */
-        html, body { height: 100%; margin: 0; background-color: #F8FFE4; }
-        #root { height: 100%; display: flex; flex-direction: column; }
+        html, body { min-height: 100%; margin: 0; background-color: #F8FFE4; }
+        /* min-height (а не height) — иначе #root фиксируется в один экран и внутренний
+           div становится прокручиваемым вместо окна, ломая скролл-спай навигации */
+        #root { min-height: 100vh; display: flex; flex-direction: column; }
       </style>
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
